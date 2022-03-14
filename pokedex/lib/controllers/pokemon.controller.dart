@@ -8,7 +8,7 @@ class PokemonController extends GetxController {
   var pokemonProvider = Get.find<PokemonProvider>();
 
   PokemonController() {
-    getPokemon('charizard');
+    getPokemon('pikachu');
   }
 
   Future getPokemon(String name) async {

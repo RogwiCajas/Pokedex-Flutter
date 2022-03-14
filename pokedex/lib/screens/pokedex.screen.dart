@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pokedex/controllers/pokemon.controller.dart';
 import 'package:pokedex/screens/tipos.screen.dart';
+import 'package:pokedex/widgets/custom_card.dart';
 
 //externos
 
@@ -44,24 +45,7 @@ class Pokedex extends StatelessWidget {
                 onSubmitted: _onsubmit,
               ),
               GetBuilder<PokemonController>(
-                  builder: (_) => Card(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            ListTile(
-                              leading: CircleAvatar(
-                                child: Image.network(
-                                    _.pokemones[0].sprite.other.dream.url),
-                              ),
-
-                              title: Text(_.pokemones[0].name),
-                              subtitle: Text(
-                                  "# ${_.pokemones[0].id.toString()} - exp. base ${_.pokemones[0].baseXp.toString()}"),
-                              // Text(snapshot.data!.baseXp.toString()),
-                            )
-                          ],
-                        ),
-                      )),
+                  builder: (_) => CustomCard(pokemon: _.pokemones[0])),
               Column(
                 children: <Widget>[
                   ElevatedButton(
