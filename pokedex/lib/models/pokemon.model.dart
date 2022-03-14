@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Pokemon {
   final String name;
   final int id;
