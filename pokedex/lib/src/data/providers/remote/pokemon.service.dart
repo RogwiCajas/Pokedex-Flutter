@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../models/pokemon.model.dart';
+import 'package:pokedex/src/data/models/pokemon.model.dart';
 
 class PokemonProvider extends GetConnect {
   @override

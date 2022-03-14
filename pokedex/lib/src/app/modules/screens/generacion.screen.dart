@@ -11,11 +11,18 @@ class Generation extends StatelessWidget {
         title: const Text("Generacion"),
         backgroundColor: Colors.redAccent,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text('Volver!'),
-        ),
+      body: Column(
+        children: <Widget>[
+          const Text("Vista no implementada"),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Volver!'),
+            ),
+          ),
+        ],
       ),
     );
   }

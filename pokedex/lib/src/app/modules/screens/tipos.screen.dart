@@ -11,13 +11,18 @@ class Types extends StatelessWidget {
         title: const Text("Tipos"),
         backgroundColor: Colors.redAccent,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Volver!'),
-        ),
+      body: Column(
+        children: <Widget>[
+          const Text("Vista no implementada"),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Volver!'),
+            ),
+          ),
+        ],
       ),
     );
   }

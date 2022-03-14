@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-import '../models/pokemon.model.dart';
+import 'package:pokedex/src/data/models/pokemon.model.dart';
 
 class CustomCard extends StatelessWidget {
   final Pokemon pokemon;

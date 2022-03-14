@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pokedex/controllers/pokemon.controller.dart';
-import 'package:pokedex/screens/tipos.screen.dart';
-import 'package:pokedex/widgets/custom_card.dart';
+import 'package:pokedex/src/app/modules/controllers/pokemon.controller.dart';
+import 'package:pokedex/src/app/global/widgets/custom_card.dart';
 
 //externos
 
-class Pokedex extends StatelessWidget {
+class Pokedex extends GetView<PokemonController> {
   const Pokedex({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     //Controlador
-    final controlador = Get.put(PokemonController());
+    //final controlador = Get.put(PokemonController());
 
     void _onsubmit(String value) {
-      controlador.getPokemon(value);
+      controller.getPokemon(value);
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("POKEDÉX"),
+        title: const Text("Buscar por Nombre"),
         backgroundColor: Colors.redAccent,
       ),
       //navigation
@@ -44,6 +43,7 @@ class Pokedex extends StatelessWidget {
                 //onChanged: _onChange,
                 onSubmitted: _onsubmit,
               ),
+              const Divider(),
               GetBuilder<PokemonController>(builder: (_) {
                 if (_.pokemones.isNotEmpty) {
                   return CustomCard(pokemon: _.pokemones[0]);
@@ -51,7 +51,7 @@ class Pokedex extends StatelessWidget {
                   return const Text("cargando pokemon..");
                 }
               }),
-              Column(
+              /*Column(
                 children: <Widget>[
                   ElevatedButton(
                       onPressed: () {
@@ -62,7 +62,7 @@ class Pokedex extends StatelessWidget {
                       },
                       child: const Text("siguiente")),
                 ],
-              )
+              )*/
             ],
           ),
         ),

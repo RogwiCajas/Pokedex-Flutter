@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
-import 'package:pokedex/services/pokemon.service.dart';
-
-import '../models/pokemon.model.dart';
+import 'package:pokedex/src/data/models/pokemon.model.dart';
+import 'package:pokedex/src/data/providers/remote/pokemon.service.dart';
 
 class PokemonController extends GetxController {
   var pokemones = <Pokemon>[];
