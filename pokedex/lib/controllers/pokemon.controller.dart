@@ -13,6 +13,7 @@ class PokemonController extends GetxController {
 
   Future getPokemon(String name) async {
     final lista = await pokemonProvider.getPokemon(name);
+    pokemones.clear();
     pokemones = lista;
     update();
   }

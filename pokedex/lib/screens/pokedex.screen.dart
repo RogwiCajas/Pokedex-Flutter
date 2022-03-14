@@ -44,8 +44,13 @@ class Pokedex extends StatelessWidget {
                 //onChanged: _onChange,
                 onSubmitted: _onsubmit,
               ),
-              GetBuilder<PokemonController>(
-                  builder: (_) => CustomCard(pokemon: _.pokemones[0])),
+              GetBuilder<PokemonController>(builder: (_) {
+                if (_.pokemones.isNotEmpty) {
+                  return CustomCard(pokemon: _.pokemones[0]);
+                } else {
+                  return const Text("cargando pokemon..");
+                }
+              }),
               Column(
                 children: <Widget>[
                   ElevatedButton(
